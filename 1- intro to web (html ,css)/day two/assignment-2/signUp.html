@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>sign up</h1>
+    <form action="./welcome.html" method="get">
+      <label for="fName">First Name</label>
+      <input
+        type="text"
+        name="fName"
+        id="fName"
+        required
+        placeholder="first name"
+      />
+      <br />
+
+      <label for="lName">Last Name</label>
+      <input
+        type="text"
+        name="lName"
+        id="lName"
+        required
+        placeholder="last name"
+      />
+      <br />
+
+      <label for="Password">Password</label>
+      <input
+        type="password"
+        name="Password"
+        id="Password"
+        required
+        placeholder="Password"
+      />
+      <br />
+
+      <label for="fName">confirm Password</label>
+      <input
+        type="password"
+        name="cPassword"
+        id="cPassword"
+        required
+        placeholder="confirm Password"
+      />
+      <br />
+
+      <label for="Email">Email</label>
+      <input
+        type="email"
+        name="Email"
+        id="Email"
+        required
+        placeholder="Email"
+      />
+      <br />
+
+      <label for="bDay">Birth Day</label>
+      <input type="date" name="bDay" id="bDay" placeholder="Birth Day" />
+      <br />
+
+      <label for="fName">profile photo</label>
+      <input type="file" name="my-photo" id="my-photo" placeholder="my-photo" />
+      <br />
+
+      <!-- check box -->
+      <!-- <h3>interests</h3> -->
+      <fieldset>
+        <legend>interests</legend>
+        <input
+          type="checkbox"
+          name="interest"
+          id="interest1"
+          value="Programming"
+        />
+        <label for="interest1">Programming</label>
+        <br />
+
+        <input type="checkbox" name="interest" id="interest2" value="Reading" />
+        <label for="interest2">Reading</label>
+        <br />
+
+        <input
+          type="checkbox"
+          name="interest"
+          id="interest3"
+          value="Swimming"
+        />
+        <label for="interest3">Swimming</label>
+        <br />
+      </fieldset>
+      <!-- radio button -->
+
+      <h3>gender</h3>
+      <fieldset>
+        <legend>gender</legend>
+
+        <input type="radio" name="gender" id="male" />
+        <label for="male">male</label>
+        <br />
+
+        <input type="radio" name="gender" id="female" />
+        <label for="male">female</label>
+        <br />
+      </fieldset>
+      <br />
+      <!-- button to redirect after clicking -->
+      <input type="submit" value="Send Request" />
+    </form>
+  </body>
+</html>
