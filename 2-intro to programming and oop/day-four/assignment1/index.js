@@ -52,7 +52,7 @@ class Student extends Person {
   }
 }
 
-const person1 = new Person("abdo ali", 23);
+// const person1 = new Person("abdo ali", 23);
 // person1.printPerson();
 
 const employee1 = new Employee("abdo ", 23, 2000, "cairo-tech");
