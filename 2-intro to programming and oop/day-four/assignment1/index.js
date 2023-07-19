@@ -22,7 +22,8 @@ class Employee extends Person {
     this.salary += bonse;
   }
   printPerson() {
-    console.log(`person name : ${this.name} , age : ${this.age} `);
+    // console.log(`person name : ${this.name} , age : ${this.age} `);
+    super.printPerson();
     console.log(
       `Employee company : ${this.company} , salary : ${this.salary} `
     );
@@ -32,16 +33,25 @@ class Employee extends Person {
 class Student extends Person {
   school;
   company;
-  constructor(name, age, school, company) {
+  constructor(name, age, school) {
     super(name, age);
     this.school = school;
-    this.company = company;
   }
   changeStudentSchool(schoolName) {
     this.school = schoolName;
   }
   printPerson() {
-    console.log(`person name : ${this.name} , age : ${this.age} `);
+    // console.log(`person name : ${this.name} , age : ${this.age} `);
+    super.printPerson();
     console.log(`student school: ${this.school} `);
   }
 }
+
+const person1 = new Person("abdo ali", 23);
+// person1.printPerson();
+
+const employee1 = new Employee("abdo ", 23, 2000, "cairo-tech");
+employee1.printPerson();
+
+const student1 = new Student("abdo ", 23, 2000, "elmaymon");
+student1.printPerson();
