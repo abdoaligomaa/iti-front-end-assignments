@@ -2,6 +2,11 @@ class Person {
   name;
   age;
   constructor(name, age) {
+    if (new.target === Person) {
+      throw Error(
+        "This class is abstract class , you can't create instance from it"
+      );
+    }
     this.name = name;
     this.age = age;
   }
