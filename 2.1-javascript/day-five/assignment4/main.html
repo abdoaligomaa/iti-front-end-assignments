@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>assignment 4</title>
+  </head>
+  <body>
+    <h1>assignment 4</h1>
+    <script>
+      /*
+      3-4-	Prompt user to enter his Full Name and email address, and use regular expression only (don't use string functions) to validate his input to make sure it is in correct format using these criteria:
+        a.	Full Name should be characters only (without numbers or special characters) and has the following structure:
+        •	Characters (alphabetic only) more than 3.
+        •	Then one space.
+        •	And finally some other characters (alphabetic only) more than 3
+        •	This pattern may be repeated, so it can contain other spaces but after each space must be 3 alphabetic characters at least (like full name, each part is 3 letters at least, and separated by a space).
+        •	And shouldn’t start or end with spaces or special characters.
+        b.	Email must be from Egypt (.eg domain), for example name@domain.com.eg (.com.eg, .net.eg, .edu.eg or .org.eg [.eg is a must], don’t allow any other domains).
+
+       */
+
+      function checkValidEmailandNameWithRegex() {
+        const emailPattern =
+          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com\.eg|net\.eg|edu\.eg|org\.eg)$/i;
+        const fullNamePattern = /^[a-zA-Z]{4,}( [a-zA-Z]{4,})*$/;
+        var isValidEmail = false;
+        var isValidName = false;
+        var emailMessage = "Enter your Email : ";
+        var nameMessage = "Enter your full name : ";
+        // check email
+        while (!isValidEmail) {
+          var email = prompt(emailMessage);
+          isValidEmail = emailPattern.test(email);
+          if (isValidEmail) {
+            // document.write("email is good");
+            break;
+          } else {
+            emailMessage = "Unvalid Email , Please Enter Another Good Email : ";
+          }
+        }
+        // ehceck full name
+        while (!isValidName) {
+          var name = prompt(nameMessage);
+          isValidName = fullNamePattern.test(name);
+          if (isValidName) {
+            // document.write("name is good");
+            break;
+          } else {
+            nameMessage = "Unvalid Name , Please Enter Another Good Name : ";
+          }
+        }
+
+        document.write(`your name is ${name}, and your email is ${email}`);
+      }
+      checkValidEmailandNameWithRegex();
+    </script>
+  </body>
+</html>
