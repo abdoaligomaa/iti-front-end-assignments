@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>assignment 7</title>
+  </head>
+  <body>
+    <h1>assignment 7</h1>
+
+    <script>
+      /*
+        7-	Create an array of objects that hold student name along with his degree (Each element of the array is an object has 2 properties: Name and Degree).
+        a.	Find student Name, who got degree between 90 and 100 [Use find()].
+        b.	Print students names, who got a degree less than 60 [Use filter()].
+        c.	Add a new student to the array [Use push()],()], and then use for…in to print all elements of the array.
+        d.	Remove the last student of the array [Use pop()], and then use for…of to print all elements of the array.
+        e.	Sort the array alphabetically based on the student name.
+        f.	Use splice() function to add 2 new students after the second element of the array [Bonus].
+        g.	Use splice() function to remove 1 student after the third element in the array [Bonus].
+
+       */
+      const students = [
+        { name: "abdelrahman ali", degree: 95 },
+        { name: "youssef ali", degree: 70 },
+        { name: "ahmed abobaker", degree: 40 },
+        { name: "mohamed sobsy", degree: 59 },
+      ];
+      console.log(students);
+      const cleverStudent = students.find(
+        (s) => s.degree >= 90 && s.degree <= 100
+      );
+      console.log("Clever Student ", cleverStudent.name);
+
+      const badStudents = students.filter((s) => s.degree < 60);
+      console.log("Falled Students ", badStudents);
+      // add new object to the array and print all array objects
+      students.push({ name: "sara ali", degree: 50 });
+      console.log(students);
+      for (const key in students) {
+        console.log(students[key]);
+      }
+
+      // remove last item in the array and print all array
+      students.pop();
+      for (const student of students) {
+        console.log("student ", student);
+      }
+    </script>
+  </body>
+</html>
