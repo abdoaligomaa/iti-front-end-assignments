@@ -1,0 +1,84 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>day six , assignment 2</title>
+  </head>
+  <body>
+    <h1>day six , assignment 2</h1>
+
+    <button onclick="startClock(event)">start clock</button>
+    <div class="startClock"></div>
+    <script>
+      /*
+      2-	On the same page, Make a button (Start clock), that showing alert saying “Clock Started” and displays clock with current time in local format (time only without date) in a div updated every second.
+        a.	Handle the onclick event of the (start clock) button using JavaScript (Not in the input tag).
+        b.	Stop the clock when user clicks (alt + w) letter, and show alert saying “Clock stopped”.
+
+      */
+      var startClock = function (e) {
+        var date = new Date();
+        window.setInterval(() => {
+          var div = (document.querySelector(".startClock").innerHTML =
+            date.toTimeString());
+          console.log(div);
+        }, 1000);
+      };
+    </script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clock Example</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="startButton">Start clock</button>
+    <div id="clockDisplay" , style="text-align: center"></div>
+
+    <script>
+      let intervalId; // To store the interval ID for stopping the clock
+
+      // Function to start the clock
+      function startClock() {
+        alert("Clock Started");
+        updateClock(); // Call the function immediately to display the time initially
+
+        // Update the clock every second (1000ms)
+        intervalId = setInterval(updateClock, 1000);
+
+        // Handle the event for "alt + w" key combination
+        document.addEventListener("keydown", function (event) {
+          if (event.altKey && event.key === "w") {
+            stopClock();
+          }
+        });
+      }
+
+      // Function to update the clock with the current time
+      function updateClock() {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString(); // Get the current time in local format
+        document.getElementById("clockDisplay").innerText = timeString;
+      }
+
+      // Function to stop the clock
+      function stopClock() {
+        clearInterval(intervalId); // Stop the interval
+        alert("Clock stopped");
+      }
+
+      // Attach the click event listener to the "Start clock" button
+      document
+        .getElementById("startButton")
+        .addEventListener("click", startClock);
+    </script>
+  </body>
+</html>
