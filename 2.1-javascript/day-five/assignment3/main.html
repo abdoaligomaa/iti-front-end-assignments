@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>assignment 3</title>
+  </head>
+  <body>
+    <h1>assignment 3</h1>
+    <script>
+      /*
+      3-	Ask the user to enter his Email,
+       and use function strings (Don’t use RegExp) to check if the Email contains @, and not in the first or last index.
+       */
+
+      function checkValidEmailWithStringMethods() {
+        const email = prompt("Enter your Email : ");
+        var isContainChar = email.indexOf("@");
+        if (isContainChar === -1) {
+          document.write("Bad Email, does not contain @ ");
+        } else if (isContainChar === 0 || isContainChar === email.length - 1) {
+          document.write("Bad Email,  contain @ in first char or last char ");
+        } else document.write(`Good Email`);
+      }
+      checkValidEmailWithStringMethods();
+    </script>
+  </body>
+</html>

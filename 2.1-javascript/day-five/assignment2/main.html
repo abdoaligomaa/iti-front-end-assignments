@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>assignment 2</title>
+  </head>
+  <body>
+    <button onclick="showDate()">get current date</button>
+    <script>
+      /*
+       2-	Make a button that display the current date and time in local format on the page.
+       */
+      function showDate() {
+        const dateNow = new Date();
+        const dateString = dateNow.toString();
+        document.write(`the current date and time is : ${dateString}`);
+      }
+    </script>
+  </body>
+</html>
